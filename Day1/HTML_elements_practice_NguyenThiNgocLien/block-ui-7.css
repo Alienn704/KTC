@@ -1,0 +1,57 @@
+body {
+  font-family: ROboto, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 40px;
+  text-align: center;
+}
+
+.process-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #757575;
+  font-weight: bold;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.red {
+  background-color: #f75354;
+}
+
+.blue {
+  background-color: #31c8dd;
+}
+
+.green {
+  background-color: #51d567;
+}
+
+.purple {
+  background-color: #cb79e7;
+}
+
+.arrow {
+  font-size: 24px;
+  color: #aaa;
+}

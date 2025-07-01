@@ -1,0 +1,87 @@
+body {
+  background: #f1f6fc;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  width: 450px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  gap: 10px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+}
+
+/* Icon background colors */
+.green {
+  background-color: #51d567;
+}
+.red {
+  background-color: #f65354;
+}
+.blue {
+  background-color: #33c9dd;
+}
+.yellow {
+  background-color: #fcd518;
+}
+.purple {
+  background-color: #cb78e6;
+}
+
+.bar {
+  flex: 1;
+  background-color: #eee;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Fill colors */
+.green-fill {
+  background-color: #51d567;
+}
+.red-fill {
+  background-color: #f65354;
+}
+.blue-fill {
+  background-color: #33c9dd;
+}
+.yellow-fill {
+  background-color: #fcd518;
+}
+.purple-fill {
+  background-color: #cb78e6;
+}

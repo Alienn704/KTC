@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: Segoe UI, sans-serif;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+.item {
+  flex: 1;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 0;
+}
+
+.home {
+  background-color: #31c8dd;
+}
+.about {
+  background-color: #f75354;
+}
+.feature {
+  background-color: #51d567;
+}
+.service {
+  background-color: #fcd518;
+}
+.gallery {
+  background-color: #f78153;
+}
+.blog {
+  background-color: #fe60e8;
+}

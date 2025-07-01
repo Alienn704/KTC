@@ -1,0 +1,100 @@
+:root {
+  --font-family: "Lato", sans-serif;
+  --font-size: 14px;
+  --font-color: #333;
+  --number-color: #00bcd4;
+  --card-bg: #fff;
+  --bar-height: 40px;
+  --spacing: 16px;
+
+  /* Bar Colors */
+  --bar-red: #ef5350;
+  --bar-green: #66bb6a;
+  --bar-yellow: #ffee58;
+  --bar-blue: #26c6da;
+  --bar-orange: #ff7043;
+
+  --bg: #ecf0f1;
+}
+
+body {
+  margin: 0;
+  padding: 40px;
+  background-color: var(--bg);
+  font-family: var(--font-family);
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--font-color);
+  margin-bottom: 8px;
+}
+
+.card-number {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--number-color);
+  margin-bottom: 16px;
+}
+
+.bar-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: var(--bar-height);
+  margin-bottom: 8px;
+}
+
+.bar {
+  width: 20px;
+  border-radius: 4px 4px 0 0;
+}
+
+.bar.red {
+  background-color: var(--bar-red);
+  height: 20px;
+}
+
+.bar.green {
+  background-color: var(--bar-green);
+  height: 30px;
+}
+
+.bar.yellow {
+  background-color: var(--bar-yellow);
+  height: 25px;
+}
+
+.bar.blue {
+  background-color: var(--bar-blue);
+  height: 35px;
+}
+
+.bar.orange {
+  background-color: var(--bar-orange);
+  height: 28px;
+}
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #888;
+}

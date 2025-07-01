@@ -1,0 +1,114 @@
+:root {
+  --container-width: 540px;
+  --font-family: "Roboto", sans-serif;
+  --font-size: 14px;
+  --font-weight-bold: 700;
+  --color-white: #ffffff;
+  --color-background: #ecf0f1;
+  --spacing: 16px;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.card {
+  width: var(--container-width);
+  background: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  position: relative;
+  height: 200px;
+  background-image: url("https://img.freepik.com/free-vector/copy-space-bokeh-spring-lights-background_52683-55649.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-img {
+  position: absolute;
+  bottom: -40px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+}
+
+.profile-info {
+  position: absolute;
+  bottom: 10px;
+  left: 110px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.profile-info p {
+  margin: 2px 0 0;
+  font-size: 14px;
+}
+
+.card-body {
+  padding-top: 60px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-top: 1px solid #eee;
+}
+
+.info-row:first-child {
+  border-top: none;
+}
+
+.info-label {
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  font-size: var(--font-size);
+}
+
+.info-value {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size);
+  padding: 4px 12px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.followers {
+  background-color: #ef5350;
+}
+
+.followings {
+  background-color: #26c6da;
+}
+
+.messages {
+  background-color: #66bb6a;
+}
+
+.likes {
+  background-color: #ffee58;
+  color: #000;
+}
+
+.comments {
+  background-color: #ab47bc;
+}
