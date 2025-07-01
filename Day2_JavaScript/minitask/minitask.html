@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript DOM Practice</title>
+    <style>
+      .box,
+      .hoverBox {
+        width: 200px;
+        height: 100px;
+        border: 2px solid #000;
+        margin: 10px 0;
+        transition: background-color 0.3s ease;
+      }
+
+      .highlight {
+        background-color: yellow;
+      }
+
+      .error {
+        color: red;
+        font-size: 0.9em;
+      }
+
+      .invalid {
+        border: 2px solid red;
+      }
+
+      .colorBtn {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Task 1 -->
+    <h3>1. Change Text Content of a Div</h3>
+    <button id="changeTextBtn">Change Text</button>
+    <div id="textDisplay">Old Text</div>
+
+    <!-- Task 2 -->
+    <h3>2. Toggle a CSS Class on an Element</h3>
+    <button id="toggleHighlightBtn">Toggle Highlight</button>
+    <div class="box"></div>
+
+    <!-- Task 3 -->
+    <h3>3. Add New List Item</h3>
+    <input id="itemInput" placeholder="Add item" />
+    <button id="addItemBtn">Add</button>
+    <ul id="itemList"></ul>
+
+    <!-- Task 4 -->
+    <h3>4. Remove an Element</h3>
+    <ul>
+      <li>Item 1 <button class="deleteBtn">Delete</button></li>
+      <li>Item 2 <button class="deleteBtn">Delete</button></li>
+    </ul>
+
+    <!-- Task 5 -->
+    <h3>5. Update Image</h3>
+    <img
+      id="mainImage"
+      src="https://cafefcdn.com/thumb_w/640/203337114487263232/2022/3/3/photo1646280815645-1646280816151764748403.jpg"
+      width="150"
+      height="100"
+    />
+    <button id="changeImageBtn">Change Image</button>
+
+    <!-- Task 6 -->
+    <h3>6. Get Input Value</h3>
+    <input id="usernameInput" placeholder="Enter username" />
+    <button id="submitUsername">Submit</button>
+
+    <!-- Task 7 -->
+    <h3>7. Event Listener on Multiple Elements</h3>
+    <button class="colorBtn">Red</button>
+    <button class="colorBtn">Green</button>
+    <button class="colorBtn">Blue</button>
+
+    <!-- Task 8 -->
+    <h3>8. Change Background on Hover</h3>
+    <div class="hoverBox"></div>
+
+    <!-- Task 9 -->
+    <h3>9. Live Clock</h3>
+    <p id="clockDisplay">00:00:00</p>
+
+    <!-- Task 10 -->
+    <h3>10. Validate Form Field</h3>
+    <input id="emailInput" placeholder="Enter email" />
+    <button id="validateBtn">Validate</button>
+    <div id="errorMessage" style="color: red"></div>
+
+    <!-- Task 11 -->
+    <h3>11. Hide Element</h3>
+    <button id="hideParaBtn">Hide Info</button>
+    <p id="infoPara">This is some information.</p>
+
+    <!-- Task 12 -->
+    <h3>12. Greeting Based on Time</h3>
+    <p id="greetingText"></p>
+
+    <!-- Task 13 -->
+    <h3>13. Field Border Highlight on Error</h3>
+    <input id="nameInput" placeholder="Name" />
+    <button id="formSubmit">Submit Form</button>
+    <div id="nameError" style="color: red"></div>
+
+    <!-- Task 14 -->
+    <h3>14. Disable Button After Click</h3>
+    <button id="onceBtn">Click Me Once</button>
+
+    <!-- Task 15 -->
+    <h3>15. Textarea Character Counter</h3>
+    <textarea id="bioInput" maxlength="200" rows="3" cols="30"></textarea>
+    <p id="charCount">200 characters remaining</p>
+
+    <!-- Task 16 -->
+    <h3>16. Add Colored Boxes</h3>
+    <button id="addBoxBtn">Add Box</button>
+    <div id="boxContainer"></div>
+
+    <!-- Task 17 -->
+    <h3>17. Strike Through Completed Items</h3>
+    <ul id="todoList">
+      <li>Buy milk</li>
+      <li>Wash car</li>
+    </ul>
+
+    <!-- Task 18 -->
+    <h3>18. Show/Hide Password</h3>
+    <input type="password" id="passwordInput" />
+    <label><input type="checkbox" id="togglePassword" /> Show Password</label>
+
+    <!-- Task 19 -->
+    <h3>19. Count Checked Checkboxes</h3>
+    <label><input type="checkbox" class="optionBox" /> Option 1</label>
+    <label><input type="checkbox" class="optionBox" /> Option 2</label>
+    <label><input type="checkbox" class="optionBox" /> Option 3</label>
+    <p>Checked: <span id="checkedCount">0</span></p>
+
+    <!-- Task 20 -->
+    <h3>20. Image Gallery with Thumbnails</h3>
+    <div style="display: flex; flex-direction: column">
+      <img
+        id="mainPhoto"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXEf03dchrTdrxDg1Hjc10ONBdp_kRz1wlMok3U63vCR83P_xTs6iP6xNDMUzer_vBPMA&usqp=CAU"
+        width="200"
+        height="200"
+      />
+      <div style="display: flex; flex-direction: row">
+        <img
+          class="thumbnail"
+          src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:0/q:90/plain/https://cellphones.com.vn/media/wysiwyg/Phone/Apple/iPhone-16/cate-iphone-16-series-38.jpg"
+          width="100"
+          height="100"
+        />
+        <img
+          class="thumbnail"
+          src="https://www.kaizershop.gr/image/cache/catalog/IPHONE16/20240913102757_apple_iphone_16_5g_8gb_128gb_pink_proparagelia-1200x1200.jpeg"
+          width="100"
+          height="100"
+        />
+        <img
+          class="thumbnail"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyEzJPziq4BKk6ux-cIUl-TntlJYPNhv_IcRnZx_gEsq1VfXclkU3hsKDv-TDg0EaEdpQ&usqp=CAU"
+          width="100"
+          height="100"
+        />
+      </div>
+    </div>
+
+    <script src="minitask.js"></script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="registrationForm" novalidate>
+      <h2 style="text-align: center">User Registration Form</h2>
+      <!-- Full Name -->
+      <label for="fullName">Full Name *</label>
+      <input type="text" id="fullName" />
+      <div class="error" id="fullNameError"></div>
+
+      <!-- Email -->
+      <label for="email">Email *</label>
+      <input type="email" id="email" />
+      <div class="error" id="emailError"></div>
+
+      <!-- Password -->
+      <label for="password">Password *</label>
+      <input type="password" id="password" />
+      <div class="error" id="passwordError"></div>
+
+      <!-- Confirm Password -->
+      <label for="confirmPassword">Confirm Password *</label>
+      <input type="password" id="confirmPassword" />
+      <div class="error" id="confirmPasswordError"></div>
+
+      <!-- Phone Number -->
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" />
+      <div class="error" id="phoneError"></div>
+
+      <!-- Gender -->
+      <label>Gender *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="Male" /> Male</label>
+        <label
+          ><input type="radio" name="gender" value="Female" /> Female</label
+        >
+        <label><input type="radio" name="gender" value="Other" /> Other</label>
+      </div>
+      <div class="error" id="genderError"></div>
+
+      <!-- Date of Birth -->
+      <label for="dob">Date of Birth *</label>
+      <input type="date" id="dob" />
+      <div class="error" id="dobError"></div>
+
+      <!-- Country -->
+      <label for="country">Country *</label>
+      <select id="country">
+        <option value="">-- Select Country --</option>
+        <option>Vietnam</option>
+        <option>USA</option>
+        <option>UK</option>
+        <option>Japan</option>
+      </select>
+      <div class="error" id="countryError"></div>
+
+      <!-- Hobbies -->
+      <label>Hobbies *</label>
+      <div class="checkbox-group">
+        <label
+          ><input type="checkbox" name="hobbies" value="Reading" />
+          Reading</label
+        >
+        <label
+          ><input type="checkbox" name="hobbies" value="Traveling" />
+          Traveling</label
+        >
+        <label
+          ><input type="checkbox" name="hobbies" value="Gaming" /> Gaming</label
+        >
+      </div>
+      <div class="error" id="hobbiesError"></div>
+
+      <!-- Profile Picture -->
+      <label for="profilePic">Profile Picture (optional)</label>
+      <input type="file" id="profilePic" accept=".jpg,.jpeg,.png" />
+
+      <!-- Bio -->
+      <label for="bio">Bio / About You</label>
+      <textarea
+        id="bio"
+        rows="4"
+        maxlength="300"
+        placeholder="Max 300 characters"
+      ></textarea>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
