@@ -1,0 +1,19 @@
+.section {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  width: 330px;
+  background-color: #fdfdfd;
+  flex: 1;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}

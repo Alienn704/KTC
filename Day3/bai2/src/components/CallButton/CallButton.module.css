@@ -1,0 +1,38 @@
+.button {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 330px;
+  height: 70px;
+  font-size: 16px;
+  border: 1px solid black;
+  padding: 0;
+  overflow: hidden;
+  padding-right: 18px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.img {
+  height: 100%;
+  width: 80px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  display: block;
+}
+
+.name {
+  font-size: 25px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+

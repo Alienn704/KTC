@@ -1,0 +1,45 @@
+.button {
+  background-color: white;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  width: 330px;
+  border: 1px solid #000;
+}
+
+
+.boderScore {
+  background-color: #8f8f8f;
+  color: #000;
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14;
+}

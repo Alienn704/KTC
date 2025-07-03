@@ -1,0 +1,84 @@
+.button {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: none;
+  font-family: sans-serif;
+  border: 1px solid black;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.highlight {
+  background-color: #e8fbe8;
+  color: #000;
+}
+
+.feeds {
+  background-color: #fae7fb;
+  color: #000;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+.subTitle {
+  font-size: 16px;
+  color: #96a0aa;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progressBar {
+  flex: 1;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #f2f8fb;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  width: 80%;
+  background-color: #91dea0;
+  border-radius: 10px;
+}
+
+.percent {
+  font-weight: bold;
+  font-size: 14px;
+}

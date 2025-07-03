@@ -1,0 +1,41 @@
+.button {
+  background-color: white;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  width: 330px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  border: 1px solid black;
+}
+
+.name {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+.visa {
+  color: blue;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
