@@ -79,9 +79,20 @@ function App() {
 
       <section className="section">
         <TeamButton
-          avt={["images/france.png", "images/avt1.png","images/avt2.png"]}
+          avt={["images/avt2.png"]}
+          name="Miriam Jimenez"
+          color="#12c0e7"
+        />
+        <TeamButton
+          avt={["images/avt4.png", "images/avt5.png", "images/avt6.png"]}
           name="Teams"
           subtitle="Two currently"
+          color="#740ef5"
+        />
+        <TeamButton
+          avt={["images/avt7.png", "images/avt8.png"]}
+          name="New Teams"
+          color="#fff614"
         />
       </section>
     </div>

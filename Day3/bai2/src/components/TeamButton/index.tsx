@@ -4,11 +4,12 @@ type TTeamButtonProps = {
   avt: string[];
   name: string;
   subtitle?: string;
+  color: string;
 };
 
-const TeamButton = ({ avt, name, subtitle }: TTeamButtonProps) => {
+const TeamButton = ({ avt, name, subtitle, color }: TTeamButtonProps) => {
   return (
-    <button className={styles.button}>
+    <button className={styles.button} style={{ background: color }}>
       <div className={styles.avatars}>
         {avt.map((src, index) => (
           <img
