@@ -1,0 +1,22 @@
+.likeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.icon {
+  width: 20px;
+  stroke: black;
+  height: 20px;
+}
+
+.likedIcon {
+  fill: rgb(0, 23, 128);
+}
+
+.text {
+  font-size: 16px;
+  color: #000;
+}

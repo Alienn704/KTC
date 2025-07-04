@@ -1,0 +1,52 @@
+.oneItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  width: 250px;
+  position: relative;
+}
+
+.img {
+  width: 250px;
+}
+.title {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sellingPrice {
+  color: red;
+  font-weight: bold;
+  text-align: left;
+  display: flex;
+}
+
+.initPrice {
+  color: rgb(144, 145, 146);
+  text-decoration: line-through;
+  display: flex;
+  /* flex: 1; */
+  /* text-align: right; */
+}
+
+.priceRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.discount {
+  position: absolute; 
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 25px;
+  background-color: rgb(255, 0, 0);
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  line-height: 20px; 
+  font-size: 14px;
+}

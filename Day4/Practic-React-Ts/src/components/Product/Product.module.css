@@ -1,0 +1,42 @@
+.product {
+  display: flex;
+  background-color: hsla(0, 0%, 100%, 0.906);
+  color: #000;
+  padding: 10px 10px;
+  /* border: 2px solid #333; */
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 330px;
+  gap: 16px;
+  margin-bottom: 12px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.img {
+  width: 330px;
+  height: 200px;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+  text-align: left;
+}
+
+.views {
+  font-size: 14px;
+  color: rgb(255, 153, 0);
+  text-align: left;
+}
+
+
+
+.news{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

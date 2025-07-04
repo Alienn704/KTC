@@ -1,0 +1,22 @@
+.section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 30px 50px;
+  /* border: 1px solid black; */
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-weight: bold;
+  align-items: flex-end;
+  
+}
+
+.listProduct {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
