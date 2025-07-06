@@ -1,0 +1,11 @@
+.family {
+  font-size: medium;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 30px 50px;
+  /* border: 1px solid black; */
+}
