@@ -1,0 +1,9 @@
+.app {
+  padding: 20px;
+  font-family: sans-serif;
+  max-width: 400px;
+  margin: auto;
+  background: linear-gradient(#cde6f9, #ffffff);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
