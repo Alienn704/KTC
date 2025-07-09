@@ -1,8 +1,5 @@
-import React from 'react'
 
-type Props = {}
-
-const OverviewPage = (props: Props) => {
+const OverviewPage = () => {
   return (
     <div>OverviewPage</div>
   )

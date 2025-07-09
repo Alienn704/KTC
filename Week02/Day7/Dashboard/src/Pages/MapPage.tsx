@@ -1,8 +1,6 @@
-import React from 'react'
 
-type Props = {}
 
-const MapPage = (props: Props) => {
+const MapPage = () => {
   return (
     <div>MapPage</div>
   )

@@ -1,8 +1,5 @@
-import React from 'react'
 
-type Props = {}
-
-const PatientsPage = (props: Props) => {
+const PatientsPage = () => {
   return (
     <div>PatientsPage</div>
   )
