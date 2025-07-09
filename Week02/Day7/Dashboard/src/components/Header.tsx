@@ -3,7 +3,6 @@ import { Bell, Search } from 'lucide-react';
 const Header = () => {
   return (
     <div className="flex items-center justify-between p-4 border-b">
-      {/* Search box */}
       <div className="flex items-center gap-2 bg-white border rounded px-3 py-1 w-80">
         <Search className="text-gray-400" />
         <input

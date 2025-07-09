@@ -20,10 +20,10 @@ type Product = {
 };
 
 type ProductListProps = {
-  categoryId?: number;
+  selectedCategories: number[];
 };
 
-const ProductList = ({ categoryId }: ProductListProps) => {
+const ProductList = ({ selectedCategories }: ProductListProps) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [page, setPage] = useState(1);
   const pageSize = 4;
@@ -35,15 +35,21 @@ const ProductList = ({ categoryId }: ProductListProps) => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data);
+        const filtered = selectedCategories.length
+          ? data.filter((product: Product) =>
+              selectedCategories.includes(product.category.id)
+            )
+          : data;
+        const paginated = filtered.slice(0, pageSize);
+        setProducts(paginated);
       })
       .catch((err) => {
         console.error("Fetch error:", err);
       });
-  }, [page]);
+  }, [page, selectedCategories]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-1">
       <h2 className="text-2xl font-bold mb-6">Danh sách sản phẩm</h2>
       {products.length === 0 ? (
         <span className="text-gray-500">Không có sản phẩm nào.</span>
@@ -61,7 +67,7 @@ const ProductList = ({ categoryId }: ProductListProps) => {
                 className="w-full h-48 object-cover"
               />
 
-              <div className="p-4">
+              <div className="p-1">
                 <h3 className="text-lg font-semibold mb-1">{product.title}</h3>
                 <p className="text-sm text-gray-500 mb-2">
                   {product.category?.name}
