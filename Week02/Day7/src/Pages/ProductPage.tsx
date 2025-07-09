@@ -1,4 +1,4 @@
-import React from "react";
+
 import ProductList from "../Components/ProductList";
 import FilterSidebar from "../Components/FilterSidebar";
 import { useState } from "react";
