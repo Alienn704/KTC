@@ -1,20 +1,19 @@
 import { useForm } from "react-hook-form";
-import { Eye, EyeOff } from "lucide-react";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
-import type { User } from "../types";
 import AuthContext from "../context";
 import { login } from "../service";
+import type { User } from "../types";
+
+type FormData = {
+  email: string;
+  password: string;
+};
 
 const LoginPage = () => {
   const { setUser } = useContext(AuthContext);
-
-  type FormData = {
-    email: string;
-    password: string;
-  };
-
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string>("");
 
   const navigate = useNavigate();
 
@@ -26,12 +25,12 @@ const LoginPage = () => {
   } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
-    if (data.email === "tungnt@softech.vn" && data.password === "123456789") {
+    try {
       const result = await login(data.email, data.password);
-      console.log("Kết quả từ API:", result);
+
       const user: User = {
-        email: result.loggedInUser.email,
         id: result.loggedInUser.id,
+        email: result.loggedInUser.email,
         access_token: result.access_token,
       };
 
@@ -40,10 +39,10 @@ const LoginPage = () => {
       localStorage.setItem("access_token", user.access_token);
 
       navigate("/tasks");
-      console.log("Đăng nhập thành công:", user);
       reset();
-    } else {
-      alert("Email hoặc mật khẩu không đúng");
+    } catch (err: any) {
+      setErrorMsg("Email hoặc mật khẩu không đúng");
+      console.error("Login error:", err);
     }
   };
 
@@ -52,6 +51,10 @@ const LoginPage = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col gap-y-4 max-w-md mx-auto mt-20 p-6 border rounded-xl shadow-md"
     >
+      <h2 className="text-2xl font-bold mb-2 text-center">Login</h2>
+
+      {errorMsg && <p className="text-red-500 text-center">{errorMsg}</p>}
+
       <div className="flex flex-col gap-1">
         <input
           type="email"
@@ -72,7 +75,7 @@ const LoginPage = () => {
 
       <div className="flex flex-col gap-1 relative">
         <input
-          type={showPassword ? "text" : "password"}
+          type="password"
           placeholder="Password"
           {...register("password", {
             required: "Vui lòng nhập mật khẩu",
@@ -81,15 +84,9 @@ const LoginPage = () => {
               message: "Mật khẩu ít nhất 6 ký tự",
             },
           })}
-          className="p-2 border rounded-md pr-10 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
 
-        <div
-          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 cursor-pointer"
-          onClick={() => setShowPassword(!showPassword)}
-        >
-          {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
-        </div>
         {errors.password && (
           <p className="text-red-500 text-sm">{errors.password.message}</p>
         )}

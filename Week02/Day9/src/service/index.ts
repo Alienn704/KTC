@@ -32,18 +32,23 @@ export const getTasks = async () => {
   return response.json();
 };
 
-export const getTaskById = async (id: number) => {
-  const response = await fetch(`${baseUrl}/workspaces/tasks/${id}`, {
-    headers: defaultHeaders,
-  });
-  return response.json();
-};
-
 export const createTask = async (task: Task) => {
   const response = await fetch(`${baseUrl}/workspaces/tasks`, {
     method: "POST",
-    headers: defaultHeaders,
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${localStorage.getItem("access_token") || ""}`,
+    },
     body: JSON.stringify(task),
+  });
+
+  return response.json();
+};
+
+export const getTaskById = async (id: number) => {
+  const response = await fetch(`${baseUrl}/workspaces/tasks/${id}`, {
+    headers: defaultHeaders,
   });
   return response.json();
 };
@@ -64,5 +69,27 @@ export const getTasksByAssignee = async (assigneeId: number) => {
       headers: defaultHeaders,
     }
   );
+  return response.json();
+};
+
+const getHeaders = () => ({
+  "Content-Type": "application/json",
+  Accept: "application/json",
+  Authorization: `Bearer ${localStorage.getItem("access_token") || ""}`,
+});
+
+export const deleteTask = async (id: number | string) => {
+  const response = await fetch(
+    `https://server.aptech.io/workspaces/tasks/${id}`,
+    {
+      method: "DELETE",
+      headers: getHeaders(),
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Delete task failed");
+  }
+
   return response.json();
 };
