@@ -11,11 +11,11 @@ const UpdateTaskPage = () => {
     register,
     handleSubmit,
     setValue,
-    formState: { errors, isSubmitting }, // Added isSubmitting
+    formState: { errors, isSubmitting }, 
   } = useForm<Task>()
   const { id } = useParams()
   const navigate = useNavigate()
-  const [loading, setLoading] = useState(true) // Loading state for fetching task
+  const [loading, setLoading] = useState(true) 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +37,7 @@ const UpdateTaskPage = () => {
       } catch (error) {
         console.error("Error fetching task:", error)
         alert("Không tìm thấy task hoặc có lỗi khi tải.")
-        navigate("/tasks") // Redirect if task not found or error
+        navigate("/tasks")
       } finally {
         setLoading(false)
       }
@@ -52,10 +52,10 @@ const UpdateTaskPage = () => {
         start_date: new Date(data.start_date),
         due_date: data.due_date ? new Date(data.due_date) : undefined,
         completed_date: data.completed_date ? new Date(data.completed_date) : undefined,
-        assignee_id: data.assignee_id ? Number(data.assignee_id) : undefined, // Handle optional assignee_id
+        assignee_id: data.assignee_id ? Number(data.assignee_id) : undefined, 
         updated_time: new Date(),
       })
-      alert("Cập nhật task thành công!") // User feedback
+      alert("Cập nhật task thành công!") 
       navigate("/tasks")
     } catch (err) {
       alert("Cập nhật task thất bại")

@@ -29,8 +29,6 @@ function App() {
     window.location.href = "/login";
   };
 
-  
-
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       <BrowserRouter>
@@ -41,7 +39,10 @@ function App() {
                 <div className="flex justify-between items-center h-16">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <NavLink to="/tasks" className="text-2xl font-bold text-gray-900">
+                      <NavLink
+                        to="/tasks"
+                        className="text-2xl font-bold text-gray-900"
+                      >
                         Tasks Management
                       </NavLink>
                     </div>
@@ -157,8 +158,6 @@ function App() {
                       Logout
                     </button>
                   </div>
-
-                  
                 </div>
               </div>
             </nav>
