@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router";
 import AuthContext from "../context";
 import { login } from "../service";
@@ -11,11 +11,7 @@ type FormData = {
 };
 
 const LoginPage = () => {
-  const { setUser } = useContext(AuthContext);
-  // const [showPassword, setShowPassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string>("");
-
-  const navigate = useNavigate();
 
   const {
     register,
@@ -38,13 +34,22 @@ const LoginPage = () => {
       localStorage.setItem("user", JSON.stringify(user));
       localStorage.setItem("access_token", user.access_token);
 
-      navigate("/tasks");
+     
       reset();
     } catch (err: any) {
       setErrorMsg("Email hoặc mật khẩu không đúng");
       console.error("Login error:", err);
     }
   };
+
+  const { user, setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/tasks");
+    }
+  }, [user]);
 
   return (
     <form
