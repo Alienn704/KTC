@@ -1,7 +1,7 @@
 "use client";
 import { useForm } from "react-hook-form";
-import { useState, useContext, useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useState, useContext } from "react";
+
 import AuthContext from "../context";
 import { login } from "../service";
 import type { User } from "../types";
