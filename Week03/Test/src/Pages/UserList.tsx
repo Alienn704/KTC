@@ -1,6 +1,6 @@
 import React from "react";
 import { useUser } from "./UserProvider";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const UserList = () => {
   const { users } = useUser();
