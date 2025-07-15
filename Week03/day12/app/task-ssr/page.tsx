@@ -1,11 +1,17 @@
 import React from "react";
 import Link from "next/link";
 
+type Product = {
+  id: number;
+  name: string;
+  price: number;
+};
+
 async function TaskSSR() {
   const res = await fetch("https://server.aptech.io/online-shop/products", {
     cache: "no-store",
   });
-  const products = await res.json();
+  const products: Product[] = await res.json();
 
   return (
     <main className="p-6">
@@ -14,7 +20,7 @@ async function TaskSSR() {
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.map((product: any) => (
+        {products.map((product: Product) => (
           <Link href={`/task-isr/${product.id}`} key={product.id}>
             <div className="border rounded-lg p-4 shadow hover:shadow-lg transition">
               <h2>ID: {product.id}</h2>
