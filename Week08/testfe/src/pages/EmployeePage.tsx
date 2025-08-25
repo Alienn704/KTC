@@ -45,8 +45,13 @@ export default function EmployeePage() {
   });
 
   const updateMutation = useMutation({
-    mutationFn: ({ id, values }: { id: number; values: UpdateEmployeeRequest }) =>
-      updateEmployee(id, values),
+    mutationFn: ({
+      id,
+      values,
+    }: {
+      id: number;
+      values: UpdateEmployeeRequest;
+    }) => updateEmployee(id, values),
     onSuccess: () => refreshList("Employee updated"),
   });
 
@@ -85,13 +90,13 @@ export default function EmployeePage() {
     });
   };
 
-  const handleSubmit = (values: CreateEmployeeRequest | UpdateEmployeeRequest) => {
+  const handleSubmit = (
+    values: CreateEmployeeRequest | UpdateEmployeeRequest
+  ) => {
     const { dateOfBirth, ...rest } = values;
     const formatted = {
       ...rest,
-      dateOfBirth: dateOfBirth
-        ? dayjs(dateOfBirth).format("YYYY-MM-DD")
-        : null,
+      dateOfBirth: dateOfBirth ? dayjs(dateOfBirth).format("YYYY-MM-DD") : null,
       password: (values as any).password || null,
     };
 
@@ -146,7 +151,11 @@ export default function EmployeePage() {
         Create Employee
       </Button>
 
-      <Table<Employee> rowKey="id" dataSource={employees || []} columns={columns} />
+      <Table<Employee>
+        rowKey="id"
+        dataSource={employees || []}
+        columns={columns}
+      />
 
       <Modal
         title={editingEmployee ? "Update Employee" : "Create Employee"}
@@ -157,11 +166,11 @@ export default function EmployeePage() {
           form.resetFields();
         }}
         footer={null}
-        destroyOnHidden
         maskClosable={false}
       >
         {editingEmployee ? (
           <UpdateEmployeeForm
+            key={`update-${editingEmployee.id}`}
             form={form}
             initialValues={editingEmployee}
             onSubmit={handleSubmit}
@@ -173,6 +182,7 @@ export default function EmployeePage() {
           />
         ) : (
           <CreateEmployeeForm
+            key="create"
             form={form}
             onSubmit={handleSubmit}
             onCancel={() => {

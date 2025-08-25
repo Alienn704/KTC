@@ -7,28 +7,50 @@ type Props = {
   onCancel: () => void;
 };
 
-export default function CreateEmployeeForm({ form, onSubmit, onCancel }: Props) {
+export default function CreateEmployeeForm({
+  form,
+  onSubmit,
+  onCancel,
+}: Props) {
   return (
-    <Form form={form} layout="vertical" onFinish={onSubmit} >
+    <Form
+      key="create"
+      form={form}
+      layout="vertical"
+      onFinish={onSubmit}
+      initialValues={{
+        fullName: "",
+        email: "",
+        phoneNumber: "",
+        gender: undefined,
+        dateOfBirth: null,
+        active: false,
+        password: "",
+      }}
+    >
       <Form.Item name="fullName" label="Full Name" rules={[{ required: true }]}>
         <Input />
       </Form.Item>
 
-      <Form.Item name="email" label="Email" rules={[{ required: true, type: "email" }]}>
+      <Form.Item
+        name="email"
+        label="Email"
+        rules={[{ required: true, type: "email" }]}
+      >
         <Input />
       </Form.Item>
 
-      <Form.Item name="phoneNumber" label="Phone" rules={[{ required: true, len: 10 }]}>
+      <Form.Item
+        name="phoneNumber"
+        label="Phone"
+        rules={[{ required: true, len: 10 }]}
+      >
         <Input />
       </Form.Item>
 
       <Form.Item name="gender" label="Gender">
         <Select
-          options={[
-            { value: "Nam" },
-            { value: "Nu" },
-            { value: "Khac" },
-          ]}
+          options={[{ value: "Nam" }, { value: "Nu" }, { value: "Khac" }]}
         />
       </Form.Item>
 
@@ -40,13 +62,19 @@ export default function CreateEmployeeForm({ form, onSubmit, onCancel }: Props) 
         <Switch />
       </Form.Item>
 
-      <Form.Item name="password" label="Password" rules={[{ required: true, min: 6 }]}>
+      <Form.Item
+        name="password"
+        label="Password"
+        rules={[{ required: true, min: 6 }]}
+      >
         <Input.Password />
       </Form.Item>
 
       <Form.Item>
         <Space>
-          <Button type="primary" htmlType="submit">Create</Button>
+          <Button type="primary" htmlType="submit">
+            Create
+          </Button>
           <Button onClick={onCancel}>Cancel</Button>
         </Space>
       </Form.Item>

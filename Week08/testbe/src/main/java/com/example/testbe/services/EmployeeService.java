@@ -3,6 +3,7 @@ package com.example.testbe.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import com.example.testbe.dtos.CreateEmployeeRequestDto;
 import com.example.testbe.dtos.EmployeeResponseDto;
 import com.example.testbe.dtos.UpdateEmployeeRequestDto;
 import com.example.testbe.entities.Employee;
+import com.example.testbe.exceptions.HttpException;
 import com.example.testbe.exceptions.ResourceNotFoundException;
 import com.example.testbe.repositories.EmployeeJpaRepository;
 
@@ -41,6 +43,9 @@ public class EmployeeService {
 
     // Create employee
     public EmployeeResponseDto createEmployee(CreateEmployeeRequestDto dto){
+         if (employeeRepository.existsByEmail(dto.getEmail())) {
+            throw new HttpException("Email đã tồn tại", HttpStatus.CONFLICT);
+        }
         Employee employee = Employee.builder()
                 .fullName(dto.getFullName())
                 .email(dto.getEmail())
